@@ -4,43 +4,97 @@
   "version": "1.0",
   "body": [
     {
-      "type": "Image",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
-      "size": "stretch"
-    },
-    {
-      "type": "TextBlock",
-      "spacing": "medium",
-      "size": "default",
-      "weight": "bolder",
-      "text": "Welcome to Bot Framework!",
-      "wrap": true,
-      "maxLines": 0
-    },
-    {
+      "type":"ColumnSet",
+      "columns": [
+        {
+        "type": "Column",
+        "items": [
+          {
+            "type": "Image",
+            "url": "http://localhost/images/askErica.png"
+          }
+        ]
+      },
+      {
+        "type": "Column",
+        "items": [
+          {
+            "type": "TextBlock",
+            "spacing": "medium",
+            "size": "default",
+            "weight": "bolder",
+            "text": "Hi, I am Erica.\n\n Welcome to Box website."
+          }
+        ]
+
+      }
+      ]
+      },
+     {
       "type": "TextBlock",
       "size": "default",
       "isSubtle": "yes",
-      "text": "Now that you have successfully run your bot, follow the links in this Adaptive Card to expand your knowledge of Bot Framework.",
+      "text": "I’m programmed to help you with questions about this site. Are you looking for info on Box?",
       "wrap": true,
       "maxLines": 0
     }
   ],
   "actions": [
     {
-      "type": "Action.OpenUrl",
-      "title": "Get an overview",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0"
+      "type": "Action.ShowCard",
+      "title": "Schedule a Training",
+      "card": {
+        "type":"AdaptiveCard",
+        "body":[
+          {
+            "type":"TextBlock",
+            "text":"This is a good start. We offer training schedules globally. [Click](https://alexion.service-now.com/ask?id=kb_article&sys_id=53c26b2ddb46a3840dfde9ec0b961923) to see upcoming trainings and add a training class to your calendar.",
+            "wrap": true
+          }          
+        ] 
+      }
     },
     {
-      "type": "Action.OpenUrl",
-      "title": "Ask a question",
-      "url": "https://stackoverflow.com/questions/tagged/botframework"
-    },
-    {
-      "type": "Action.OpenUrl",
-      "title": "Learn how to deploy",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-4.0"
+      "type": "Action.ShowCard",
+      "title": "Need Overview",
+      "card": {
+        "type":"AdaptiveCard",
+      "body": [
+        {
+          "type":"TextBlock",
+          "text":"We offer a recorded video that provides an insightful overview of the Box @Alexion.[Click](https://www.youtube.com/watch?v=h7lqKyUMeOw) to watch the video.",
+          "wrap": true
+        }
+      ]
     }
+    },
+    {
+      "type": "Action.ShowCard",
+      "title": "Set up a Box Folder",
+      "card": {
+        "type":"AdaptiveCard",
+          "body": [
+            {
+              "type":"TextBlock",
+              "text":"It is pretty easy to setup a Box folder. Submit a helpdesk ticket here [click](https://alexion.service-now.com/ask?id=sc_cat_item&sys_id=2bc828c313df6200faed51a63244b0cc)",
+              "wrap": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "Action.ShowCard",
+        "title": "Set up for Mobile",
+        "card": {
+          "type":"AdaptiveCard",
+            "body": [
+              {
+                "type":"TextBlock",
+                "text":"Do you know how convenient it is access Box from your mobile phone? I hope, this [link](https://box.alexion.com/guides/box-mobile/setting-up-box-for-mobile-devices) would help you to set that up.",
+                "wrap": true
+              }
+            ]
+          }
+        }
   ]
 }
